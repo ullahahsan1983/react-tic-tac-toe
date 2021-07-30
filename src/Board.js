@@ -74,30 +74,35 @@ class Board extends React.Component{
     }
      
     return (
-      <div>
-        <div className="status">{status}</div>
-        <button
-          hidden={!this.state.isFinished}
-          onClick={() => this.startNew()}
-        >
-          Start New
-        </button>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
+      <>
+        <div className="board">          
+            {this.renderSquare(0)}
+            {this.renderSquare(1)}
+            {this.renderSquare(2)}
+          
+            {this.renderSquare(3)}
+            {this.renderSquare(4)}
+            {this.renderSquare(5)}
+          
+            {this.renderSquare(6)}
+            {this.renderSquare(7)}
+            {this.renderSquare(8)}          
         </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
+        <div className="status-box">
+          <span>{status}</span>
+          <button
+              className="start-new"
+              hidden={!this.state.isFinished}
+              onClick={() => this.startNew()}
+            >
+              Start New
+          </button>
         </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
+        <div className="info-wrapper">
+          {/* TODO */}
         </div>
-      </div>
+               
+      </>
     );
   }
 }
