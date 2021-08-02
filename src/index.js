@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './Game';
+import Match from './Match';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Game />
+    <Match />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,19 +1,20 @@
 import React from 'react';
 import Square from './Square';
 
-class Board extends React.Component{
+class HistoryBoard extends React.Component{
   
   renderSquare(i) {
+    const isMarker = this.props.marker === i;
     return <Square 
       value={this.props.squares[i]} 
-      onClick={() => this.props.clickSquare(i)}
+      isMarker={isMarker}
     />;
   }
 
   render(){
     return (
       <>
-        <div className="board">          
+        <div className="history-board">          
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
@@ -31,5 +32,5 @@ class Board extends React.Component{
   }
 }
 
-export default Board;
+export default HistoryBoard;
 
