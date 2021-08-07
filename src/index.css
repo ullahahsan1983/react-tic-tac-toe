@@ -28,23 +28,25 @@ h1 {
 }
 
 .board {
-  border: 1rem solid #122858;
-  background: #122858;
+  border: 1rem solid #0dcaf0;
+  background: #0dcaf0;
   width: 500px;
   height: 500px;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 1rem;
+  position: relative;
 }
 
 .history-board {
-  border: 1px solid #122858;
-  background: black;
-  width: 100px;
-  height: 100px;
+  border: 0.25rem solid #0dcaf0;
+  background: #0dcaf0;
+  width: 120px;
+  height: 120px;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 1px;
+  position: relative;
 }
 
 .square {
@@ -58,18 +60,24 @@ h1 {
 
 .history-board .square {
   font-size: 1rem;
-  cursor: none;
+  cursor: default;  
 }
 
 .marker {
-  background: yellow;
+  background: lightgoldenrodyellow;
 }
 
-.X {
-  color: red;
+.occupied {
+  background-color: antiquewhite;
+  pointer-events: none;
+  cursor: pointer;
 }
-.O {
-  color: green;
+
+.X, .X:hover {
+  color: #fd7e14;
+}
+.O, .O:hover {
+  color: #198754;
 }
 
 h3 {
@@ -91,8 +99,8 @@ h3 {
 
 .match-status {
   display: block;
-  color: yellow;
-  background-color: #122858;
+  color: lightgoldenrodyellow;
+  background-color: #0dcaf0;
   margin-bottom: 10px;
   padding: 1rem;
 }
@@ -105,9 +113,73 @@ h3 {
 }
 
 .match .start-new {  
-  width: 100px;
-  height: 40px;
   background: aliceblue;
   color: black;
   float: right;
+}
+
+.cross:before {
+  content: "";
+  position: absolute; 
+  outline: 1px solid red;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cross-048:before {
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  transform: skewy(45deg);
+}
+
+.cross-246:before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: skewy(135deg);
+}
+
+.cross-345:before {
+  left: 0;
+  right: 0;
+  bottom: 50%;
+}
+
+.cross-012:before {
+  left: 0;
+  right: 0;
+  bottom: 84%;
+}
+
+.cross-678:before {
+  left: 0;
+  right: 0;
+  bottom: 16%;
+}
+
+.cross-147:before {
+  left: 50%;
+  bottom: 0;
+  top: 0;
+}
+
+.cross-036:before {
+  left: 16%;
+  bottom: 0;
+  top: 0;
+}
+
+.cross-258:before {
+  left: 84%;
+  bottom: 0;
+  top: 0;
+}
+
+.ocean {
+  background-color: #0dcaf0;
+}
+
+.stormy {
+  background-color: #a0abad;
 }

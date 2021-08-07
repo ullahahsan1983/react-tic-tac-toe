@@ -12,22 +12,25 @@ class HistoryBoard extends React.Component{
   }
 
   render(){
-    return (
-      <>
-        <div className="history-board">          
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
-          
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
-          
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}          
-        </div>               
-      </>
+    const winner = this.props.winner;
+    let className = "history-board";
+    if (winner) {
+      className += ` cross cross-${winner.Position}`;
+    }
+    return (      
+      <div className={className}>          
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}          
+      </div>  
     );
   }
 }

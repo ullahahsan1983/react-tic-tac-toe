@@ -11,22 +11,25 @@ class Board extends React.Component{
   }
 
   render(){
+    const winner = this.props.winner;
+    let className = "board";
+    if (winner) {
+      className += ` cross cross-${winner.Position}`;
+    }
     return (
-      <>
-        <div className="board">          
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
-          
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
-          
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}          
-        </div>               
-      </>
+      <div className={className}>          
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}          
+      </div>      
     );
   }
 }

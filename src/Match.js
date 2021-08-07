@@ -14,6 +14,7 @@ class Match extends React.Component{
       history: [{
         squares: Array(9).fill(null),
         marker: null,
+        winner: null,
       }],
       xIsNext: true,
       isFinished: false,
@@ -38,7 +39,7 @@ class Match extends React.Component{
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a];
+        return { Symbol : squares[a], Position: `${a}${b}${c}` };
       }
     }
     return null;
@@ -50,7 +51,7 @@ class Match extends React.Component{
     const winner = this.calculateWinner(current.squares);
     let status;
     if (winner) {
-      status = 'Winner: ' + winner;
+      status = 'Winner: ' + winner.Symbol;
     }
     else if(this.state.isFinished){
       status = 'Match tied';
@@ -71,20 +72,18 @@ class Match extends React.Component{
     }
 
     squares[i] = this.state.xIsNext ? 'X' : 'O';
-    const isFinished = !squares.some(v => !v) || !!this.calculateWinner(squares);
+    const winner = this.calculateWinner(squares);
+    const isFinished = !squares.some(v => !v) || winner;
     
     this.setState({
       history: history.concat({
         squares: squares,
         marker: i,
+        winner: winner,
       }), 
       xIsNext: !this.state.xIsNext, 
       isFinished: isFinished,
     });
-  }
-
-  jumpTo(i) {
-
   }
 
   render() {
@@ -92,14 +91,17 @@ class Match extends React.Component{
     const history = this.state.history;
     const current = history[history.length -1];
 
+    const buttonText = !this.state.isFinished ? 'Start Over' : 'Start Next Match';
     const moves = history.filter(e => e.marker !== null).map((step, move) => {
-      const desc = `Move ${move + 1}`;
+      const desc = step.winner ? `${step.winner.Symbol} wins!` 
+        : (move >= 8 ? "It's a tie!" : `Move ${move + 1}`);
       return (
         <li key={move}>
           {desc}
           <HistoryBoard 
             squares={step.squares}
             marker={step.marker}
+            winner={step.winner}
           />
         </li>
       );
@@ -107,21 +109,23 @@ class Match extends React.Component{
 
     return (
       <div className="match">
-        <div className="match-board">
-          <div className="match-status">
+        <div className="match-board panel panel-info">
+          <div className="match-status panel-header">
             <button
-                className="start-new"
-                hidden={!this.state.isFinished}
+                className="start-new btn btn-primary"
                 onClick={() => this.startNew()}
               >
-                Start Next Match
+                {buttonText}
             </button>
             <span className="status-text">{status}</span>
           </div>
-          <Board 
-            squares={current.squares}
-            clickSquare={(i) => this.clickSquare(i)}
-          />
+          <div className="panel-body">
+            <Board 
+              squares={current.squares}
+              clickSquare={(i) => this.clickSquare(i)}
+              winner={current.winner}
+            />
+          </div>
         </div>
         <div className="match-history">          
           <ol>{moves}</ol>
