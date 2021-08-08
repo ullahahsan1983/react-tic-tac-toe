@@ -94,16 +94,16 @@ class Match extends React.Component{
     const buttonText = !this.state.isFinished ? 'Start Over' : 'Start Next Match';
     const moves = history.filter(e => e.marker !== null).map((step, move) => {
       const desc = step.winner ? `${step.winner.Symbol} wins!` 
-        : (move >= 8 ? "It's a tie!" : `Move ${move + 1}`);
+        : (move >= 8 ? "It's a tie!" : `${move + 1}`);
       return (
-        <li key={move}>
-          {desc}
+        <span key={move}>
+          <span className="badge move-text">{desc}</span>
           <HistoryBoard 
             squares={step.squares}
             marker={step.marker}
             winner={step.winner}
           />
-        </li>
+        </span>
       );
     });
 
@@ -128,7 +128,7 @@ class Match extends React.Component{
           </div>
         </div>
         <div className="match-history">          
-          <ol>{moves}</ol>
+          {moves}
         </div>
       </div>
     );

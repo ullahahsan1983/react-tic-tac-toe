@@ -4,9 +4,11 @@ import Match from './Match';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import ThemeSelector from './ThemeSelector';
 
 ReactDOM.render(
   <React.StrictMode>
+    <ThemeSelector />
     <Match />
   </React.StrictMode>,
   document.getElementById('root')

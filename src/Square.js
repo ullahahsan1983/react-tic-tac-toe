@@ -1,7 +1,7 @@
 import React from "react";
 
 function Square(props){
-  let className = 'square btn';
+  let className = 'square';
   if (props.value) {
     className += ` ${props.value}`;
   }
@@ -9,7 +9,10 @@ function Square(props){
     className += ' marker';
   }
   else if (props.value || props.isSnap) {
-    className += ' occupied'
+    className += ' occupied';
+  }
+  else {
+    className += ' empty';
   }
   
   return (
