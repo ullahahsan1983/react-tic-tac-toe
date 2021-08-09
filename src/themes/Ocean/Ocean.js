@@ -1,5 +1,5 @@
-import X from './starfish-in-bubble.png';
-import O from './whale-in-bubble.png';
+import X from './starfish-bubble.png';
+import O from './shark-bubble.png';
 import SQ from './water-bubble.png';
 import BG from './deep-ocean.jpg';
 import BB from './sea-line.png';
@@ -10,10 +10,10 @@ body {
   background-size: cover;
 }
 
-.board {
+/*.board {
   border: 1rem solid aqua;
   border-image: url(${BB}) 30 round;
-}
+}*/
 
 .history-board {
   border-color: aqua;
@@ -41,22 +41,11 @@ body {
   border: none;
 }
 
-.match-status {
-  color: black;
-  background-color: transparent;
-  border: none;
-  padding: 5px 0 5px 0;
-}
-
 .match .start-new {  
   background-color: aqua;
   border-color: aqua;
   color: black;
   float: none;
-}
-
-.match .status-text {
-  display: none;
 }
 
 .match-history .move-text {

@@ -1,6 +1,6 @@
-import X from './cloud.png';
-import O from './sun.png';
-import BG from './storm.png';
+import X from './storm-cloud.png';
+import O from './sun-cloud.png';
+import BG from './stormy-sky.png';
 
 const Stormy = () => `
 body {
@@ -10,19 +10,13 @@ body {
 
 .history-board {
   border-color: lightgray;
-  background-color: lightgray;
+  background-color: transparent;
 }
 
 .square {
   background-color: darkslategrey;
-}
-
-.marker {
-  background-color: lightgoldenrodyellow;
-}
-
-.occupied {
-  background-color: antiquewhite;
+  font-size: 0;
+  border: none;
 }
 
 .X, .X:hover {
@@ -37,13 +31,9 @@ body {
   font-size: 0;
 }
 
-.match-status {
-  color: darkslategrey;
-  background-color: lightgray;
-}
-
 .match .start-new {  
   background-color: lightgray;
+  border-color: lightgray;
   color: darkslategrey;
 }
 

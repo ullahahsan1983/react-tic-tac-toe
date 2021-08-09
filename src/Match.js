@@ -87,7 +87,6 @@ class Match extends React.Component{
   }
 
   render() {
-    const status = this.getStatus();
     const history = this.state.history;
     const current = history[history.length -1];
 
@@ -109,23 +108,20 @@ class Match extends React.Component{
 
     return (
       <div className="match">
-        <div className="match-board panel panel-info">
-          <div className="match-status panel-header">
+        <div className="match-board">
+          <div className="match-status">
             <button
                 className="start-new btn btn-primary"
                 onClick={() => this.startNew()}
               >
                 {buttonText}
             </button>
-            <span className="status-text">{status}</span>
           </div>
-          <div className="panel-body">
-            <Board 
-              squares={current.squares}
-              clickSquare={(i) => this.clickSquare(i)}
-              winner={current.winner}
-            />
-          </div>
+          <Board 
+            squares={current.squares}
+            clickSquare={(i) => this.clickSquare(i)}
+            winner={current.winner}
+          />
         </div>
         <div className="match-history">          
           {moves}
