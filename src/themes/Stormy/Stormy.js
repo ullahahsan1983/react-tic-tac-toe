@@ -1,6 +1,6 @@
-import X from './blue-storm-cloud.png';
-import O from './blue-sun-cloud.png';
-import SQ from './blue-sphere.png';
+import X from './storm-cloud.png';
+import O from './sun-cloud.png';
+import SQ from './white-cloud.png';
 import BG from './stormy-sky.png';
 
 const Stormy = () => `
