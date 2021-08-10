@@ -1,19 +1,13 @@
-import X from './starfish-bubble.png';
-import O from './shark-bubble.png';
-import SQ from './water-bubble.png';
+import X from './aqua-starfish.png';
+import O from './aqua-shark.png';
+import SQ from './aqua-sphere.png';
 import BG from './deep-ocean.jpg';
-import BB from './sea-line.png';
 
 const Ocean = () => `
 body {
   background: url(${BG}) no-repeat center fixed;
   background-size: cover;
 }
-
-/*.board {
-  border: 1rem solid aqua;
-  border-image: url(${BB}) 30 round;
-}*/
 
 .history-board {
   border-color: aqua;

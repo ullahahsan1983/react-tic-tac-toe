@@ -1,5 +1,6 @@
-import X from './storm-cloud.png';
-import O from './sun-cloud.png';
+import X from './blue-storm-cloud.png';
+import O from './blue-sun-cloud.png';
+import SQ from './blue-sphere.png';
 import BG from './stormy-sky.png';
 
 const Stormy = () => `
@@ -14,13 +15,14 @@ body {
 }
 
 .square {
-  background-color: darkslategrey;
+  background: url(${SQ}) no-repeat;
+  background-size: 100%;
   font-size: 0;
   border: none;
 }
 
 .X, .X:hover {
-  background: transparent url(${X}) no-repeat;
+  background: url(${X}) no-repeat;
   background-size: 100%;
   font-size: 0;
 }
