@@ -3,6 +3,10 @@ import O from './aqua-shark.png';
 import SQ from './aqua-sphere.png';
 import BG from './deep-ocean.jpg';
 
+const primeColor = 'paleturquoise';
+const altColor = 'darkturquoise';
+const txtColor = 'black';
+
 const Ocean = () => `
 body {
   background: url(${BG}) no-repeat center fixed;
@@ -10,7 +14,7 @@ body {
 }
 
 .history-board {
-  border-color: aqua;
+  border-color: ${altColor};
   background: transparent;
 }
 
@@ -36,24 +40,33 @@ body {
 }
 
 .match .start-new {  
-  background-color: aqua;
-  border-color: aqua;
-  color: black;
   float: none;
 }
 
 .match-history .move-text {
-  color: black;
-  background-color: aqua;
+  color: ${txtColor};
+  background-color: ${altColor};
 }
 
 .cross:before {
   outline-color: red;
 } 
 
-.theme-panel .dropdown-toggle {
-  background-color: #0dcaf0;
-  color: black;
+.btn-primary, .dropdown-item.active {
+  background-color: ${primeColor};
+  border-color: ${altColor};
+  color: ${txtColor};
+}
+
+.btn-check:active+.btn-primary, 
+.btn-check:checked+.btn-primary, 
+.btn-primary.active, 
+.btn-primary:active, 
+.show>.btn-primary.dropdown-toggle, 
+.btn-primary:hover, .btn-primary:focus {
+  color: ${txtColor};
+  background-color: ${altColor};
+  border-color: ${primeColor};
 }
 `;
 

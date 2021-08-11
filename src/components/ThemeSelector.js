@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { createGlobalStyle } from 'styled-components';
-import ThemeCollection from './themes/Themes.js'
+import ThemeCollection from '../themes/Themes.js';
 
 const ThemeBar = ({active, onClick}) => {
   const options = Object.keys(ThemeCollection).map(
@@ -20,7 +20,7 @@ const ThemeBar = ({active, onClick}) => {
     <div className="theme-panel">
       <DropdownButton 
         as="ButtonGroup" 
-        variant="default"
+        variant="primary"
         title={active}>
         {options}
       </DropdownButton>

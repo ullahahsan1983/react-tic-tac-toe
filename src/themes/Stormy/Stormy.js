@@ -3,6 +3,10 @@ import O from './sun-cloud.png';
 import SQ from './white-cloud.png';
 import BG from './stormy-sky.png';
 
+const primeColor = 'lightgray';
+const altColor = 'darkslategrey';
+const txtColor = 'black';
+
 const Stormy = () => `
 body {
   background: url(${BG}) no-repeat center fixed;
@@ -10,7 +14,7 @@ body {
 }
 
 .history-board {
-  border-color: lightgray;
+  border-color: ${altColor};
   background-color: transparent;
 }
 
@@ -34,23 +38,27 @@ body {
 }
 
 .match .start-new {  
-  background-color: lightgray;
-  border-color: lightgray;
-  color: darkslategrey;
+  float: none;
 }
 
 .match-history .move-text {
-  color: darkslategray;
-  background-color: lightgray;
+  color: ${altColor};
+  background-color: ${primeColor};
 }
 
 .cross:before {
   outline-color: red;
 }
 
-.theme-panel .dropdown-toggle {
-  background-color: lightgray;
-  color: darkslategray;
+.btn-check:active+.btn-primary, 
+.btn-check:checked+.btn-primary, 
+.btn-primary.active, 
+.btn-primary:active, 
+.show>.btn-primary.dropdown-toggle, 
+.btn-primary:hover, .btn-primary:focus {
+  color: ${txtColor};
+  background-color: ${altColor};
+  border-color: ${primeColor};
 }
 `;
 

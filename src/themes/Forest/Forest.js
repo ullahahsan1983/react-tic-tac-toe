@@ -3,6 +3,11 @@ import O from './yellow-monkey.png';
 import SQ from './yellow-sphere.png';
 import BG from './forest.jpg';
 
+
+const primeColor = 'palegreen';
+const altColor = 'greenyellow';
+const txtColor = 'black';
+
 const Forest = () => `
 body {
   background: url(${BG}) no-repeat center fixed;
@@ -10,7 +15,7 @@ body {
 }
 
 .history-board {
-  border-color: palegreen;
+  border-color: ${primeColor};
   background: transparent;
 }
 
@@ -36,24 +41,33 @@ body {
 }
 
 .match .start-new {  
-  background-color: palegreen;
-  border-color: palegreen;
-  color: black;
   float: none;
 }
 
 .match-history .move-text {
-  color: black;
-  background-color: palegreen;
+  color: ${txtColor};
+  background-color: ${primeColor};
 }
 
 .cross:before {
   outline-color: red;
 } 
 
-.theme-panel .dropdown-toggle {
-  background-color: palegreen;
-  color: black;
+.btn-primary, .dropdown-item.active {
+  background-color: ${primeColor};
+  border-color: ${altColor};
+  color: ${txtColor};
+}
+
+.btn-check:active+.btn-primary, 
+.btn-check:checked+.btn-primary, 
+.btn-primary.active, 
+.btn-primary:active, 
+.show>.btn-primary.dropdown-toggle, 
+.btn-primary:hover, .btn-primary:focus {
+  color: ${txtColor};
+  background-color: ${altColor};
+  border-color: ${primeColor};
 }
 `;
 

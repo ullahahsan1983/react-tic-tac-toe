@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Match from './Match';
+import Match from './components/tictactoe/Match';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+
 import reportWebVitals from './reportWebVitals';
-import ThemeSelector from './ThemeSelector';
+import ThemeSelector from './components/ThemeSelector';
+import Footer from './components/Footer';
+import SideBar from './components/SideBar';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeSelector />
+    <SideBar />
     <Match />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 * {
   padding: 0;
@@ -25,8 +26,6 @@ body {
 }
 
 .board {
-  /*border: 1rem solid #0dcaf0;
-  background: #0dcaf0;*/
   width: 500px;
   height: 500px;
   display: grid;
@@ -37,8 +36,7 @@ body {
 }
 
 .history-board {
-  border: 0.25rem solid #0dcaf0;
-  background: #0dcaf0;
+  border: 0.25rem solid;
   width: 120px;
   height: 120px;
   display: grid;
@@ -48,7 +46,6 @@ body {
 }
 
 .square {
-  background: aliceblue;
   border: none; 
   font-size: 5rem;
   /* font-weight: 800; */
@@ -66,7 +63,6 @@ body {
 }
 
 .occupied {
-  background-color: antiquewhite;
   pointer-events: none;
   cursor: pointer;
 }
@@ -97,11 +93,6 @@ body {
   border: none;
   padding: 1rem;
   padding-left: 0;
-}
-
-.match .start-new {  
-  background: aliceblue;
-  color: black;
 }
 
 .cross:before {
@@ -160,4 +151,105 @@ body {
   left: 84%;
   bottom: 0;
   top: 0;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+/* Flip Card */
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 360px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+/* Font Awesome*/
+.fa {
+  padding: 5px;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* LinkedIn */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: lightskyblue;
+  color: white;
+}
+
+.flip-card-front img {
+  width: 250px;
+}
+
+.flip-card-back .social-links {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+}
+
+.social-links a {
+  margin-right: 5px;
+  float: right;
 }

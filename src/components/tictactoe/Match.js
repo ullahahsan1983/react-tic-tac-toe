@@ -111,10 +111,10 @@ class Match extends React.Component{
         <div className="match-board">
           <div className="match-status">
             <button
-                className="start-new btn btn-primary"
-                onClick={() => this.startNew()}
-              >
-                {buttonText}
+              className="start-new btn btn-primary"
+              onClick={() => this.startNew()}
+            >
+              {buttonText}
             </button>
           </div>
           <Board 
