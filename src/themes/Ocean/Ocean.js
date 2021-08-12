@@ -14,7 +14,7 @@ body {
 }
 
 .history-board {
-  border-color: ${altColor};
+  border-color: ${primeColor};
   background: transparent;
 }
 
@@ -45,7 +45,7 @@ body {
 
 .match-history .move-text {
   color: ${txtColor};
-  background-color: ${altColor};
+  background-color: ${primeColor};
 }
 
 .cross:before {

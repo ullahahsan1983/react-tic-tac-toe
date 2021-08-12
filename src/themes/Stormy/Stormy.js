@@ -5,7 +5,8 @@ import BG from './stormy-sky.png';
 
 const primeColor = 'lightgray';
 const altColor = 'darkslategrey';
-const txtColor = 'black';
+const primeTxtColor = 'black';
+const altTxtColor = 'white';
 
 const Stormy = () => `
 body {
@@ -14,7 +15,7 @@ body {
 }
 
 .history-board {
-  border-color: ${altColor};
+  border-color: ${primeColor};
   background-color: transparent;
 }
 
@@ -42,12 +43,18 @@ body {
 }
 
 .match-history .move-text {
-  color: ${altColor};
+  color: ${primeTxtColor};
   background-color: ${primeColor};
 }
 
 .cross:before {
   outline-color: red;
+}
+
+.btn-primary, .dropdown-item.active {
+  background-color: ${primeColor};
+  border-color: ${altColor};
+  color: ${primeTxtColor};
 }
 
 .btn-check:active+.btn-primary, 
@@ -56,7 +63,7 @@ body {
 .btn-primary:active, 
 .show>.btn-primary.dropdown-toggle, 
 .btn-primary:hover, .btn-primary:focus {
-  color: ${txtColor};
+  color: ${altTxtColor};
   background-color: ${altColor};
   border-color: ${primeColor};
 }
