@@ -11,7 +11,7 @@ import SideBar from './components/SideBar';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeSelector />
+    <ThemeSelector theme="Forest" />
     <SideBar />
     <Match />
     <Footer />

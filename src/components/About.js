@@ -24,10 +24,11 @@ const About = () => {
           <Offcanvas.Title>About</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div>Framework: <span className="text-warning">React</span></div>
+          <div>Platform: <span className="text-warning">React</span></div>
           <p> 
             <div><a href="https://github.com/ullahahsan1983/react-tic-tac-toe">Github</a> </div>
           </p>
+          <div>Developed by</div>
           <MyProfile />
         </Offcanvas.Body>
       </Offcanvas> 

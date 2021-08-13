@@ -32,7 +32,7 @@ class ThemeSelector extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      themeName: 'Ocean'
+      themeName: props.theme || 'Ocean'
     };
   }
 
